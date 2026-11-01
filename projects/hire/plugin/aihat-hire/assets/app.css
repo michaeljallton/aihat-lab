@@ -1,15 +1,19 @@
 /* Hire Your First Crew Member. Every rule is scoped under .aihat-hire.
- * Palette and type from the site's landing-page system. Laptop is the primary
- * layout; phones work for sign-up and task entry. Pending OPTICS pass. */
+ * Palette and type per Brand Guide v4.15 sections 2, 3 and 5 (OPTICS pass
+ * Nov 1 2026). Steel Blue #2A74B9 on light grounds; the #5FA8E8 lift only on
+ * Charcoal. Status colors are not used: no status words appear in the tool.
+ * #FFFFFF appears only inside input fields and on button text, for
+ * legibility. Laptop is the primary layout; phones handle sign-up and tasks. */
 
 .aihat-hire {
 	--ah-charcoal: #313131;
 	--ah-offwhite: #EBE9D7;
-	--ah-steel: #5fa8e8;
+	--ah-steel: #2A74B9;
+	--ah-steel-on-dark: #5FA8E8;
+	--ah-dim: #58595B;
 	--ah-green: #069448;
 	--ah-tan: #CBC1A4;
-	--ah-ink: #1f1f1f;
-	--ah-line: rgba(49, 49, 49, 0.18);
+	--ah-ink: #313131;
 	--ah-display: "Michroma", "Raleway", sans-serif;
 	--ah-body: "Raleway", -apple-system, "Segoe UI", sans-serif;
 	--ah-mono: "Courier Prime", "Courier New", monospace;
@@ -30,8 +34,8 @@
 .aihat-hire .aihat-hire__hero {
 	background-color: var(--ah-charcoal);
 	background-image:
-		linear-gradient(rgba(95, 168, 232, 0.12) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(95, 168, 232, 0.12) 1px, transparent 1px);
+		linear-gradient(rgba(95, 168, 232, 0.14) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(95, 168, 232, 0.14) 1px, transparent 1px); /* #5FA8E8 grid on Charcoal */
 	background-size: 32px 32px;
 	color: var(--ah-offwhite);
 	padding: 40px 28px 36px;
@@ -58,8 +62,9 @@
 .aihat-hire .aihat-hire__body { background: var(--ah-offwhite); padding: 24px; }
 
 .aihat-hire .aihat-hire__card {
-	background: #fff;
-	border: 1px solid var(--ah-line);
+	background: var(--ah-offwhite);
+	border: 1px solid var(--ah-tan);
+	border-top: 3px solid var(--ah-charcoal);
 	border-radius: 6px;
 	padding: 24px;
 	margin: 0 auto 20px;
@@ -69,8 +74,8 @@
 .aihat-hire .aihat-hire__card--wide { max-width: none; }
 
 .aihat-hire h2 { font-family: var(--ah-display); font-weight: 400; font-size: 21px; line-height: 1.3; margin: 0 0 12px; color: var(--ah-charcoal); }
-.aihat-hire h3 { font-size: 19px; margin: 6px 0 6px; color: var(--ah-charcoal); }
-.aihat-hire h4 { font-family: var(--ah-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin: 14px 0 4px; color: #555; }
+.aihat-hire h3 { font-size: 19px; font-weight: 700; margin: 6px 0 6px; color: var(--ah-charcoal); }
+.aihat-hire h4 { font-family: var(--ah-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin: 14px 0 4px; color: var(--ah-dim); font-weight: 700; }
 
 /* Forms. */
 .aihat-hire .aihat-hire__field { margin: 0 0 14px; flex: 1 1 0; }
@@ -84,9 +89,9 @@
 	font: inherit;
 	font-size: 16px; /* 16px stops iOS zooming on focus */
 	padding: 10px 12px;
-	border: 1px solid #b9b5a2;
+	border: 1px solid var(--ah-dim);
 	border-radius: 4px;
-	background: #fff;
+	background: #FFFFFF;
 	color: var(--ah-ink);
 	min-height: 44px;
 }
@@ -98,16 +103,16 @@
 .aihat-hire .aihat-hire__check { display: flex; gap: 10px; align-items: flex-start; margin: 4px 0 12px; }
 .aihat-hire .aihat-hire__check input { width: 22px; height: 22px; margin-top: 2px; flex: 0 0 auto; }
 .aihat-hire .aihat-hire__code { font-family: var(--ah-mono); font-size: 26px !important; letter-spacing: 0.3em; text-align: center; }
-.aihat-hire .aihat-hire__fine { font-size: 14px; color: #555; }
+.aihat-hire .aihat-hire__fine { font-size: 14px; color: var(--ah-dim); }
 
 /* Buttons. */
 .aihat-hire .aihat-hire__btn {
 	display: inline-block;
 	font: inherit;
 	font-weight: 700;
-	font-size: 16px;
+	font-size: 19px; /* 19px bold is large text: white on Sea Green (3.9:1) clears 3:1 */
 	background: var(--ah-green);
-	color: #fff;
+	color: #FFFFFF;
 	border: 2px solid var(--ah-green);
 	border-radius: 4px;
 	padding: 11px 20px;
@@ -125,21 +130,23 @@
 	border: 0;
 	padding: 8px 0;
 	margin-right: 16px;
-	color: #1f6fb5;
+	color: var(--ah-charcoal);
 	text-decoration: underline;
+	text-decoration-color: var(--ah-steel);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
 	cursor: pointer;
 	min-height: 44px;
 }
 .aihat-hire .aihat-hire__links { display: flex; flex-wrap: wrap; }
 
-.aihat-hire .aihat-hire__msg { padding: 10px 12px; border-radius: 4px; margin: 8px 0; }
-.aihat-hire .aihat-hire__msg--error { background: #fdecea; color: #8a1c12; }
-.aihat-hire .aihat-hire__msg--ok { background: #e6f4ec; color: #054d26; }
-.aihat-hire .aihat-hire__wait { font-family: var(--ah-mono); color: #444; }
+.aihat-hire .aihat-hire__msg { padding: 10px 14px; margin: 10px 0; background: #FFFFFF; color: var(--ah-charcoal); border-left: 4px solid var(--ah-charcoal); font-weight: 600; }
+.aihat-hire .aihat-hire__msg--ok { border-left-color: var(--ah-green); font-weight: 400; }
+.aihat-hire .aihat-hire__wait { font-family: var(--ah-mono); color: var(--ah-charcoal); }
 .aihat-hire .aihat-hire__wait::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 50%; background: var(--ah-steel); animation: aihat-hire-pulse 1s ease-in-out infinite; }
 @keyframes aihat-hire-pulse { 50% { opacity: 0.2; } }
 @media (prefers-reduced-motion: reduce) { .aihat-hire .aihat-hire__wait::before { animation: none; } }
-.aihat-hire .aihat-hire__wait--sticky { position: sticky; bottom: 0; background: var(--ah-offwhite); padding: 12px 0; }
+.aihat-hire .aihat-hire__wait--sticky { position: sticky; bottom: 0; background: var(--ah-offwhite); padding: 12px 0; border-top: 1px solid var(--ah-tan); }
 
 /* Tabs and tasks. */
 .aihat-hire .aihat-hire__tabs { display: flex; gap: 0; border-bottom: 2px solid var(--ah-charcoal); margin: 12px 0 0; }
@@ -157,7 +164,7 @@
 }
 .aihat-hire .aihat-hire__tab.is-active { background: var(--ah-charcoal); color: var(--ah-offwhite); }
 
-.aihat-hire .aihat-hire__task { border-bottom: 1px solid var(--ah-line); padding: 14px 0; }
+.aihat-hire .aihat-hire__task { border-bottom: 1px solid var(--ah-tan); padding: 14px 0; }
 .aihat-hire .aihat-hire__task-main { display: grid; grid-template-columns: 1fr 1.4fr; gap: 10px; }
 .aihat-hire .aihat-hire__task-nums { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin-top: 10px; }
 .aihat-hire .aihat-hire__task-nums label { display: flex; flex-direction: column; font-size: 14px; font-weight: 600; }
@@ -165,8 +172,8 @@
 .aihat-hire .aihat-hire__inline { display: flex; gap: 6px; }
 .aihat-hire .aihat-hire__inline select { width: auto; }
 .aihat-hire .aihat-hire__weekly { font-family: var(--ah-mono); font-weight: 700; padding-bottom: 10px; }
-.aihat-hire .aihat-hire__saved { font-size: 13px; color: #555; padding-bottom: 12px; }
-.aihat-hire .aihat-hire__del { color: #8a1c12; margin-left: auto; }
+.aihat-hire .aihat-hire__saved { font-family: var(--ah-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ah-dim); padding-bottom: 12px; }
+.aihat-hire .aihat-hire__del { color: var(--ah-dim); margin-left: auto; }
 .aihat-hire .aihat-hire__total { font-family: var(--ah-mono); margin: 12px 0 0; }
 .aihat-hire .aihat-hire__total--all { font-weight: 700; margin-top: 2px; }
 
@@ -174,23 +181,23 @@
 .aihat-hire .aihat-hire__recs { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 .aihat-hire .aihat-hire__recs > h2,
 .aihat-hire .aihat-hire__recs > .aihat-hire__wait { grid-column: 1 / -1; margin-top: 8px; }
-.aihat-hire .aihat-hire__rec { background: #fff; border: 1px solid var(--ah-line); border-top: 4px solid var(--ah-steel); border-radius: 6px; padding: 18px; display: flex; flex-direction: column; }
+.aihat-hire .aihat-hire__rec { background: var(--ah-offwhite); border: 1px solid var(--ah-tan); border-top: 4px solid var(--ah-steel); border-radius: 6px; padding: 18px; display: flex; flex-direction: column; }
 .aihat-hire .aihat-hire__rec ul { margin: 0 0 4px 1.1em; padding: 0; }
 .aihat-hire .aihat-hire__rec .aihat-hire__btn { margin-top: auto; align-self: flex-start; }
-.aihat-hire .aihat-hire__drag { font-family: var(--ah-mono); font-weight: 700; color: var(--ah-green); margin: 0 0 8px; }
+.aihat-hire .aihat-hire__drag { font-family: var(--ah-mono); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ah-charcoal); border-left: 3px solid var(--ah-green); padding-left: 10px; margin: 0 0 10px; }
 .aihat-hire .aihat-hire__tags { display: flex; gap: 6px; flex-wrap: wrap; }
 .aihat-hire .aihat-hire__tag { font-family: var(--ah-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 3px; background: var(--ah-tan); color: var(--ah-charcoal); }
 .aihat-hire .aihat-hire__tag--skill,
 .aihat-hire .aihat-hire__tag--project { background: var(--ah-charcoal); color: var(--ah-offwhite); }
 
 /* Prompt. */
-.aihat-hire .aihat-hire__prompt { font-family: var(--ah-mono); font-size: 14px; line-height: 1.5; min-height: 360px; background: #fbfaf4; }
+.aihat-hire .aihat-hire__prompt { font-family: var(--ah-mono); font-size: 14px; line-height: 1.5; min-height: 360px; }
 .aihat-hire .aihat-hire__steps { margin: 0 0 12px 1.2em; padding: 0; }
 .aihat-hire .aihat-hire__actions { margin: 8px 0 16px; }
 .aihat-hire .aihat-hire__platforms { margin: 0 0 12px 1.1em; padding: 0; }
 .aihat-hire .aihat-hire__platforms li { margin-bottom: 6px; }
 
-.aihat-hire .aihat-hire__footer { display: flex; flex-wrap: wrap; gap: 4px 0; align-items: center; justify-content: flex-end; padding: 10px 24px; font-size: 14px; color: #555; background: var(--ah-offwhite); border-top: 1px solid var(--ah-line); border-radius: 0 0 6px 6px; }
+.aihat-hire .aihat-hire__footer { display: flex; flex-wrap: wrap; gap: 4px 0; align-items: center; justify-content: flex-end; padding: 10px 24px; font-size: 14px; color: var(--ah-dim); background: var(--ah-offwhite); border-top: 1px solid var(--ah-tan); border-radius: 0 0 6px 6px; }
 .aihat-hire .aihat-hire__footer > span { margin-right: auto; }
 
 /* Phones. */
