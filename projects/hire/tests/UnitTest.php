@@ -215,7 +215,7 @@ final class UnitTest extends TestCase {
 
 	public function test_template_keeps_fixed_structure(): void {
 		$text = Template::fill( Template::load(), $this->vars(), 'skill' );
-		foreach ( array( 'Why it exists: V_drag_name. The friction it ends: V_drag_line V_not_do_line', 'Ask one question at a time', 'ask me which AI tool', 'Persona:', 'Resources:', 'Instructions:', 'Constraints:', 'Examples:', 'Compliance:', 'Never guess what I meant', 'Never just agree with me', 'Start by asking me your first question. Nothing else.' ) as $fixed ) {
+		foreach ( array( 'Why it exists: V_drag_name. The friction it ends: V_drag_line V_not_do_line', 'Ask one question at a time', 'ask me which AI tool', 'Persona:', 'Resources:', 'Instructions:', 'Constraints:', 'Examples:', 'Compliance:', 'Never guess what I meant', 'Never just agree with me', 'Start by asking me your first question. Nothing else.', 'Microsoft 365 Copilot without Copilot Studio, treat it as a free plan', 'On a free plan: give me the packet as one block' ) as $fixed ) {
 			$this->assertStringContainsString( $fixed, $text );
 		}
 		$this->assertStringNotContainsString( 'Context:', $text );

@@ -11,7 +11,7 @@ The tasks it takes over:
 
 Before you write anything, interview me. Ask one question at a time and wait for my answer before asking the next. Never send me a list of questions. Ask no more than ten, the most important first, and skip any question an earlier answer already covered. If an answer is vague or generic, push back once and ask me to be more specific.
 
-First, before the ten, ask me which AI tool I'm using (Claude, ChatGPT, Copilot, Gemini or another) and whether it's a free or paid plan, so you know what you can set up for me.
+First, before the ten, ask me which AI tool I'm using (Claude, ChatGPT, Copilot, Gemini or another) and whether it's a free or paid plan, so you know what you can set up for me. If it's Copilot, ask which one: the free Copilot Chat, Microsoft 365 Copilot, or Copilot with Copilot Studio.
 
 Then cover these areas, in this order:
 {{territories}}
@@ -29,9 +29,9 @@ When the interview is complete, write {{crew_member_name}}'s onboarding packet u
   - Compliance: {{compliance_line}} Nothing it produces reaches a client or customer until I've reviewed it.
 - Examples: the performance standard. Define a five-star output from the example I gave you. If I had none, write a baseline example and say that's what you did.
 
-Then deliver it for the tool I named:
+Then deliver it for the tool I named. If I'm on the free Copilot Chat, or on Microsoft 365 Copilot without Copilot Studio, treat it as a free plan, because those can't save a custom agent.
 {{#skill}}
-Produce the complete Skill, ready to save: a name, a one-line description of when to use it, then the PRICE packet. If my tool doesn't support Skills, give me the same packet as custom instructions for that tool and tell me where to paste them.
+Produce the complete Skill, ready to save: a name, a one-line description of when to use it, then the PRICE packet. If my tool doesn't support Skills, give me the same packet as custom instructions for that tool and tell me where to paste them. On a free plan: give me the packet as one block I can copy in a single motion, to save in a document and paste into a new chat each time.
 {{/skill}}
 {{#project}}
 Give me step-by-step setup for my tool (a Claude Project, a ChatGPT Project or Custom GPT, a Copilot Notebook or Agent, a Gemini Gem or NotebookLM notebook): the name, the full instructions in one block I can copy in a single motion, and which resources to add. On a free plan: save the instructions to a document and paste them into a new chat each time.
